@@ -53,9 +53,15 @@ This botnet is composed by 2 main files: `Server.py` (that's the HTTP Server tha
 
 Some photos here:
 
+![Server Started](https://github.com/Mik317/PyBotnet/blob/master/doc/startserver.png)
+![Login Botnet](https://github.com/Mik317/PyBotnet/blob/master/doc/login.png)
+![DashBoard](https://github.com/Mik317/PyBotnet/blob/master/doc/dashboard.png)
+![View Bot From Key](https://github.com/Mik317/PyBotnet/blob/master/doc/view.png)
+![Bots Requests](https://github.com/Mik317/PyBotnet/blob/master/doc/botrequests.png)
+![CMD In](https://github.com/Mik317/PyBotnet/blob/master/doc/cmdin.png)
+![CMD Out](https://github.com/Mik317/PyBotnet/blob/master/doc/cdmout.png)
 
-
-* pass = The password will be generated automatically using AES and base64 encoding, therefore you must copy it every time that you execute the server.
+* Pass = The password will be generated automatically using AES and base64 encoding, therefore you must copy it every time that you execute the server.
 
 ### Todo
 - [x] Add some graphs on the DashBoard page
