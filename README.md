@@ -40,7 +40,24 @@ This botnet provide a very beautiful web panel, written in `HTML`+`Bootstrap`+`C
 - Send commands to bots
 - Have a nice view of the data
 
+### Get Started
+
+This botnet is composed by 2 main files: `Server.py` (that's the HTTP Server that contains API, C&C Panel, the DBs of sqlite and the session), and the `Core.py` file, that is the agent with which infect the bots.
+
+1. Execute the `Server` using the following command on the server machine: `py Server.py`
+2. Go to `localhost:8080`
+3. Login using the user, the pass* and the key of the botmaster
+4. Execute the `Core.py` on the victim machina, using the command like this: `py Core.py`
+5. Wait some seconds that the Agent send us all the infos
+6. Explore the C&C Panel !!!
+
+Some photos here:
+
+
+
+* pass = The password will be generated automatically using AES and base64 encoding, therefore you must copy it every time that you execute the server.
+
 ### Todo
+- [x] Add some graphs on the DashBoard page
 - [ ] Add the Credential Grabber Module
 - [ ] Add the web page for the managing of the credentials
-- [x] Add some graphs on the DashBoard page
