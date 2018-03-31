@@ -68,11 +68,11 @@ Some photos here:
 
 ### Commands
 
----------------------------------------------------------------------------------------------------------------------------------------
-|  $simple_command_to_execute_directly_(like_`ls`)  |  cred (obtain credentials)  |  ddos (launch a dos attack)  |  key (keylogging)  |
----------------------------------------------------------------------------------------------------------------------------------------
-| other will be added as soon as possible ;)                                                                                          |
----------------------------------------------------------------------------------------------------------------------------------------
+| Command       | Description   |     
+| ------------- |:-------------:|
+| $simple_command_to_execute_directly_(like_`ls`)      | Simply executed as a normal command |
+| cred      | Obtain all the credntials stored in the Chrome DB      |
+| ddos | Launch a DDOS Attack      |
 
 ### Todo
 - [x] Add some graphs on the DashBoard page
