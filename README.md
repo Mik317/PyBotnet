@@ -53,6 +53,8 @@ This botnet is composed by 2 main files: `Server.py` (that's the HTTP Server tha
 
 * Pass = The password will be generated automatically using AES and base64 encoding, therefore you must copy it every time that you execute the server.
 
+The credentials can be obtained only from Chrome, and will be memorized in the `Creds` table of the `creds.db` DB; After, you can see they for every single bot. If you want the credentias, you will insert as command to execute, the special keyword `cred`, that execute the `cred` module in the Agent.
+
 Some photos here:
 
 ![Server Started](https://github.com/Mik317/PyBotnet/blob/master/doc/startserver.png)
@@ -64,8 +66,16 @@ Some photos here:
 ![CMD Out](https://github.com/Mik317/PyBotnet/blob/master/doc/cdmout.png)
 ![Cred Page](https://github.com/Mik317/PyBotnet/blob/master/doc/cred.png)
 
+### Commands
+
+---------------------------------------------------------------------------------------------------------------------------------------
+|  $simple_command_to_execute_directly_(like_`ls`)  |  cred (obtain credentials)  |  ddos (launch a dos attack)  |  key (keylogging)  |
+---------------------------------------------------------------------------------------------------------------------------------------
+| other will be added as soon as possible ;)                                                                                          |
+---------------------------------------------------------------------------------------------------------------------------------------
+
 ### Todo
 - [x] Add some graphs on the DashBoard page
 - [x] Add the Credential Grabber Module
-- [x] Add the web page for the managing of the credentials
+- [x] Add the web page for managing of the credentials
 - [ ] Add persistence
