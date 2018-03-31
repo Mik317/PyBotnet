@@ -1,7 +1,7 @@
 # PyBotnet
 
 This is an `HTTPs Pull Botnet` :
-The victims are always active and every 5 minutes, send a request to the C&C Panel for check if there are commands to execute.
+The victims are always active and every 30 seconds (you can change the time for request), send a request to the C&C Panel for check if there are commands to execute.
 
 The botnet is very useful for passive control, like credentials harvesting or malware spamming, but not for commands execution in-live because the host doesn't contact the victim (however, there is a reverse shell option).
 
@@ -51,6 +51,8 @@ This botnet is composed by 2 main files: `Server.py` (that's the HTTP Server tha
 5. Wait some seconds that the Agent send us all the infos
 6. Explore the C&C Panel !!!
 
+* Pass = The password will be generated automatically using AES and base64 encoding, therefore you must copy it every time that you execute the server.
+
 Some photos here:
 
 ![Server Started](https://github.com/Mik317/PyBotnet/blob/master/doc/startserver.png)
@@ -61,8 +63,6 @@ Some photos here:
 ![CMD In](https://github.com/Mik317/PyBotnet/blob/master/doc/cmdin.png)
 ![CMD Out](https://github.com/Mik317/PyBotnet/blob/master/doc/cdmout.png)
 ![Cred Page](https://github.com/Mik317/PyBotnet/blob/master/doc/cred.png)
-
-* Pass = The password will be generated automatically using AES and base64 encoding, therefore you must copy it every time that you execute the server.
 
 ### Todo
 - [x] Add some graphs on the DashBoard page
