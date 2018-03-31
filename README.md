@@ -60,10 +60,12 @@ Some photos here:
 ![Bots Requests](https://github.com/Mik317/PyBotnet/blob/master/doc/botrequests.png)
 ![CMD In](https://github.com/Mik317/PyBotnet/blob/master/doc/cmdin.png)
 ![CMD Out](https://github.com/Mik317/PyBotnet/blob/master/doc/cdmout.png)
+![Cred Page](https://github.com/Mik317/PyBotnet/blob/master/doc/cred.png)
 
 * Pass = The password will be generated automatically using AES and base64 encoding, therefore you must copy it every time that you execute the server.
 
 ### Todo
 - [x] Add some graphs on the DashBoard page
-- [ ] Add the Credential Grabber Module
-- [ ] Add the web page for the managing of the credentials
+- [x] Add the Credential Grabber Module
+- [x] Add the web page for the managing of the credentials
+- [ ] Add persistence
