@@ -80,7 +80,7 @@ And, if you give the `cred` command ...... you can obtain all the credentials st
 ### Todo
 - [x] Add some graphs on the DashBoard page
 - [x] Add the Credential Grabber Module
-- [x] Add the web page for managing of the credentials
+- [x] Add the web page for managing the credentials
 - [ ] Add persistence
 - [ ] Add the DDOS Module
 - [ ] Add the DDOS Map (using [Karspersky Map](https://cybermap.kaspersky.com/))
