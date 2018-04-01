@@ -64,6 +64,8 @@ Some photos here:
 ![Bots Requests](https://github.com/Mik317/PyBotnet/blob/master/doc/botrequests.png)
 ![CMD In](https://github.com/Mik317/PyBotnet/blob/master/doc/cmdin.png)
 ![CMD Out](https://github.com/Mik317/PyBotnet/blob/master/doc/cdmout.png)
+
+And, if you give the `cred` command ...... you can obtain all the credentials stealed from the Chrome Credentials DB, that will be reported on the Web Panel like this:
 ![Cred Page](https://github.com/Mik317/PyBotnet/blob/master/doc/cred.png)
 
 ### Commands
@@ -71,7 +73,7 @@ Some photos here:
 | Command       | Description   |     
 | ------------- |:-------------:|
 | $simple_command_to_execute_directly_(like_`ls`)      | Simply executed as a normal command |
-| cred      | Obtain all the credntials stored in the Chrome DB      |
+| cred      | Obtain all the credentials stored in the Chrome DB      |
 | ddos | Launch a DDOS Attack      |
 
 ### Todo
@@ -79,3 +81,5 @@ Some photos here:
 - [x] Add the Credential Grabber Module
 - [x] Add the web page for managing of the credentials
 - [ ] Add persistence
+- [ ] Add the DDOS Module
+- [ ] Add the DDOS Map (using )
