@@ -69,6 +69,18 @@ Some photos here:
 And, if you give the `cred` command ...... you can obtain all the credentials stealed from the Chrome Credentials DB, that will be reported on the Web Panel like this:
 ![Cred Page](https://github.com/Mik317/PyBotnet/blob/master/doc/cred.png)
 
+After a revision of the code I've:
+- Added the DDOS Module
+- Added the DDOS & Malware Map of Karspersky (very cools)
+- Deleted some bugs on the section that receives commands and outputs
+
+![DdosMap](https://github.com/Mik317/PyBotnet/blob/master/doc/karsp.png)
+
+For launch a DDOS attack, you must specify only the command and the `server`:`port`, giving as input something like this:
+`ddos www.<test_site>.com:80`.
+Going to the CMD panel, you will see that the output is: `Dossed <site_that_you_have_entered>:<port>`
+
+
 ### Commands
 
 | Command       | Description   |     
@@ -81,6 +93,6 @@ And, if you give the `cred` command ...... you can obtain all the credentials st
 - [x] Add some graphs on the DashBoard page
 - [x] Add the Credential Grabber Module
 - [x] Add the web page for managing the credentials
+- [x] Add the DDOS Module
+- [x] Add the DDOS Map (using [Karspersky Map](https://cybermap.kaspersky.com/))
 - [ ] Add persistence
-- [ ] Add the DDOS Module
-- [ ] Add the DDOS Map (using [Karspersky Map](https://cybermap.kaspersky.com/))
