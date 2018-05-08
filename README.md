@@ -95,5 +95,5 @@ Going to the CMD panel, you will see that the output is: `Dossed <site_that_you_
 - [x] Add the web page for managing the credentials
 - [x] Add the DDOS Module
 - [x] Add the DDOS Map (using [Karspersky Map](https://cybermap.kaspersky.com/))
-- [x] Add the ngrok server for remote tunnelling (see [PyBotnet](https://f9ffec05.ngrok.io/) if my server is enabled)
+- [x] Add the ngrok server for remote tunnelling (see [PyBotnet](https://61485ab1.ngrok.io/) if my server is enabled)
 - [ ] Add persistence
