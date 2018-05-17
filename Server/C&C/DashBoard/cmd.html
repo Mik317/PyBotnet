@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>CMD | PyBotnet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- http://www.chartjs.org/docs/latest/ for graphs: http://www.chartjs.org/samples/latest/ -->
+<link href="http://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<style>
+body{
+	background: linear-gradient(to bottom right, rgb(3, 127, 158),rgb(255, 165, 0));
+	align-content: center;
+}
+#cmd {
+	margin:0;
+	padding:0;
+	border-color: aqua;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="/dashboard/">PyBotnet</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link" href="/cmd/">CMD<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="/view_bot/all">ViewBot</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="/logout/">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+<center><h1 class="display-3">CMD Panel</h1></center><br>
+
+	<form method="post" action="/insert_cmd">
+	    <div class="form-group">
+	      <input type="text" class="form-control" placeholder="ID" name="id">
+	    </div>
+	    <div class="form-group">
+	      <input type="text" class="form-control" placeholder="Input" name="inp">
+	  	</div>
+	 	 <button type="submit" class="btn btn-primary">Eval(In)</button>
+	</form><br><br>
+	
+	<div id="cmd">
+		<form method="post" action="/cmd_view">
+	    <div class="form-group">
+	      <input type="text" class="form-control" placeholder="ID" name="id">
+	    </div>
+	 	 <button type="submit" class="btn btn-primary">Get(Out)</button>
+	</form>
+	</div>
+	
+	<br>
+	{% if id %}
+		<button data-toggle="collapse" class="btn btn-danger" data-target="#outs">Get(Out)</button>
+		{% for x,y,z in db|reverse %}
+			<div id="outs" class="collapse">
+				<br>
+				<div class="alert alert-info alert-dismissible fade show" role="alert">
+				  <strong>{{ x }} says:</strong> {{ y }}<br>
+				  <strong>The command was: {{ z }}</strong>
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				    <span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+			</div>
+		{% endfor %}
+	{% endif %}
+	
+	
+	</div>
+
+</body>
+</html>

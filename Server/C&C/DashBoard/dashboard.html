@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>DashBoard | PyBotnet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- http://www.chartjs.org/docs/latest/ for graphs: http://www.chartjs.org/samples/latest/ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
+<style>
+body{
+	background: linear-gradient(to bottom right, rgb(3, 127, 158),rgb(255, 165, 0));
+	align-content: center;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="/dashboard/">PyBotnet</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link" href="/cmd/">CMD<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="/view_bot/all">ViewBot</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="/logout/">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container">
+<center><h1 class="display-2">DashBoard</h1></center>
+
+	<div id="map"><br>
+		<iframe style="width: 100%; height: 100%;" src="https://cybermap.kaspersky.com/en/widget/dynamic/dark" frameborder="0"></iframe>
+		<!-- <img style="width: 100%; height: 100%;" src="https://maps.googleapis.com/maps/api/staticmap?center=Nigeria&zoom=1&size=1200x500&maptype=hybrid&key={{ key }}"> -->
+	</div><br>
+		
+	<div id="chats">			
+		<canvas id="Os" width="80" height="30" style="display:block;position: relative; border-left: 10px;">Os</canvas><br>
+		<canvas id="Os2" width="80" height="30" style="display:block;position: relative; border-left: 10px;">Os2</canvas>
+		<script src="charts.js"></script>
+		<script>os({{ win }}, {{ unix }}, {{ mac }})</script>
+		<script>os2({{ win }}, {{ unix }}, {{ mac }})</script>
+	</div>
+
+<div id="totals">
+	<center><h1 class="display-3">Total Bots</h1><br></br></center>
+	<canvas id="AllBots" width="80" height="30" style="display:block;position: relative; border-left: 10px;">Number Of Bots</canvas>
+	<script>total({{ botsnum }})</script>
+</div><br>
+
+<center><h1 class="display-3">Last Bots</h1><br></br></center>
+	
+<table class="table table-sm table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Key</th>
+      <th scope="col">Geo</th>
+      <th scope="col">IP</th>
+      <th scope="col">OS</th>
+    </tr>
+  </thead>
+	{% for a,b,c,d,e,f,g,h in db|reverse %}
+			<tbody>
+			    <tr>
+			      <th scope="row"><a href="/view_bot/{{ h }}">{{ h }}</a></th>
+			      <td><img src="http://www.countryflags.io/{{ c }}/flat/32.png">  {{ c }}</td>
+			      <td>{{ d }}</td>
+			      <td>{{ g }}</td>
+			    </tr>
+	{% endfor %}
+	</tbody>
+</table>	
+		
+	</div>
+</body>
+
+</html>

