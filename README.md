@@ -45,6 +45,7 @@ This botnet provide a very beautiful web panel, written in `HTML`+`Bootstrap`+`C
 This botnet is composed by 2 main files: `Server.py` (that's the HTTP Server that contains API, C&C Panel, the DBs of sqlite and the session), and the `Core.py` file, that is the agent with which infect the bots.
 
 0. Execute the following command: `py db.py init`
+01. Edit all the GLOBAL variables with your configuration (inside `Server.py`), like `HOST`, `DB_PATH`, `API` and other
 1. Execute the `Server` using the following command on the server machine: `py Server.py`
 2. Go to `localhost:8080`
 3. Login using the user, the pass* and the key of the botmaster
