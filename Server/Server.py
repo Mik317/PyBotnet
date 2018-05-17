@@ -12,22 +12,22 @@ from cherrypy._cperror import HTTPRedirect
 HOST = '127.0.0.1'
 PORT = 8080
 KEY = b'3b732d7aaaefb3d3b68be37f04292a1c' #AES_object.encrypt(base64.b64encode(b'Mik317@root')).hex()
-ADMIN = 'Mik317@root'
+ADMIN = 'Mik317@root' #change the admin name
 PASS = base64.b64encode(AES.new(KEY, AES.MODE_CBC).encrypt(KEY).hex().encode()).decode()
 PASS2 = 'Mik317@root'
-API = 'AIzaSyANqD4yKLvQ1tzU9TRoG_t8PfYWL4zfLTg'
+API = 'Insert your API Key for google maps' #generate it using this doc: https://developers.google.com/maps/documentation/embed/get-api-key
 
 #HTML and dir variables
 PATH = 'C:\\Users\\MIKI\\workspace1\\PythonProject\\PyBotnet\\Server\\C&C\\' #change with your absolute path of the project
 PATH_V = 'C:\\Users\\MIKI\\workspace1\\PythonProject\\PyBotnet\\Server\\API\\' #path files where victim can call API
 
-SQL_EXP = ['SELECT', '\'', '"', ';', 'INSERT', 'DROP', 'TABLE', 'FROM', 'WHERE', 'SLEEP()', '#']
+SQL_EXP = ['SELECT', '\'', '"', ';', 'INSERT', 'DROP', 'TABLE', 'FROM', 'WHERE', 'SLEEP()', '#'] #possible sql expressions that can lead to sql inj
 
 #Other variables
 JSON_DEC = json.JSONDecoder()
 
 #DBs' Variables
-DB_PATH = "C:\\Users\\MIKI\\workspace1\\PythonProject\\PyBotnet\\Server\\DBs\\"
+DB_PATH = "C:\\Users\\MIKI\\workspace1\\PythonProject\\PyBotnet\\Server\\DBs\\" #change the path
 
 cherrypy.config.update({'server.socket_host': HOST, 'server.socket_port': PORT})
 
