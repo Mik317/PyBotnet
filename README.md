@@ -77,6 +77,7 @@ After a revision of the code I've:
 
 ![DdosMap](https://github.com/Mik317/PyBotnet/blob/master/doc/karsp.png)
 
+The DDOS functionality is very simply, and is inspired by Nicco and Vitto ;;))
 For launch a DDOS attack, you must specify only the command and the `server`:`port`, giving as input something like this:
 `ddos www.<test_site>.com:80`.
 Going to the CMD panel, you will see that the output is: `Dossed <site_that_you_have_entered>:<port>`
